@@ -1,4 +1,3 @@
-
 // public/js/cart.js
 
 // ============ CART MANAGEMENT WITH DATABASE PER USER ============
