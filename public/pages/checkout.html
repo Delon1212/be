@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Delon Store</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo" onclick="location.href='/'">BE OFFICIAL STORE</div>
+        <div class="nav-links" id="navLinks">
+            <a href="/">Home</a>
+            <a href="/pages/products.html">Produk</a>
+            <a href="/pages/cart.html">Keranjang <span id="cartCount">0</span></a>
+            <a href="/pages/orders.html">Pesanan</a>
+            <a href="/pages/profile.html">Profil</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </nav>
+
+    <div class="container">
+        <h1>Checkout</h1>
+        
+        <div class="checkout-layout">
+            <!-- Kolom Kiri: Informasi User & Alamat -->
+            <div>
+                <!-- Info User yang Login -->
+                <div id="userInfo"></div>
+                
+                <div class="form-container" style="margin:0; margin-top:1rem;">
+                    <h3>Alamat Pengiriman</h3>
+                    <form id="checkoutForm">
+                        <div class="form-group">
+                            <label>Alamat Lengkap *</label>
+                            <textarea id="address" rows="3" placeholder="Jalan, RT/RW, Kelurahan, Kecamatan" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Provinsi *</label>
+                            <input type="text" id="province" placeholder="Contoh: DKI Jakarta" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Kota/Kabupaten *</label>
+                            <input type="text" id="city" placeholder="Contoh: Jakarta Selatan" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Kode Pos *</label>
+                            <input type="text" id="postalCode" placeholder="Contoh: 12345" required>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Kolom Kanan: Ringkasan Pesanan -->
+            <div>
+                <div class="cart-summary">
+                    <h3>Ringkasan Pesanan</h3>
+                    <div id="orderSummary">
+                        <div class="loading"><div class="spinner"></div><p>Memuat...</p></div>
+                    </div>
+                    <!-- Tambahkan di dalam div class="cart-summary" sebelum tombol checkout -->
+                    <div id="shippingInfo"></div>
+                    <button type="button" class="btn btn-primary" onclick="processCheckout()" style="width:100%; margin-top:1.5rem; padding:0.8rem;">
+                        ✅ Konfirmasi Pesanan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/config.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="/js/menu.js"></script>
+    <script src="/js/pages/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!-- public/pages/admin-contacts.html - Update admin navigation -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Pesan Masuk |BE OFFICIAL STORE</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<body>
+    <nav class="navbar">
+        <div class="logo" onclick="location.href='/'">BE OFFICIAL STORE - Admin</div>
+        <div class="nav-links" id="navLinks">
+            <a href="/">Home</a>
+            <a href="/pages/products.html">Produk</a>
+            <a href="/pages/orders.html">Pesanan Saya</a>
+            <a href="/pages/profile.html">Profil</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </nav>
+
+    <div class="contacts-container">
+        <!-- Admin Navigation Menu -->
+        <div class="admin-nav">
+            <h2><i class="fas fa-tachometer-alt"></i> Dashboard Admin</h2>
+            <div class="admin-menu">
+                <a href="/pages/admin.html"><i class="fas fa-shopping-cart"></i> Pesanan</a>
+                <a href="/pages/admin-contacts.html" class="active"><i class="fas fa-envelope"></i> Pesan Masuk</a>
+                <a href="/pages/products.html"><i class="fas fa-box"></i> Kelola Produk</a>
+            </div>
+        </div>
+
+        <div class="contacts-header">
+            <h1><i class="fas fa-envelope"></i> Pesan Masuk dari Customer</h1>
+            <div class="stats-contact" id="statsContainer">
+                <span class="stat-badge" id="unreadCount">0 Belum dibaca</span>
+                <span class="stat-badge" id="totalCount">0 Total</span>
+            </div>
+        </div>
+
+        <div id="contactsList">
+            <div class="loading"><div class="spinner"></div><p>Memuat pesan...</p></div>
+        </div>
+    </div>
+
+    <script src="/js/config.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/menu.js"></script>
+    <script src="/js/pages/admin-contacts.js"></script>
+</body>
+</html>
